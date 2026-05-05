@@ -4,11 +4,11 @@ from typing import Optional, List, Dict, Any, Tuple
 
 import numpy as np
 import pandas as pd
-import httpx
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
+import httpx # pyright: ignore[reportMissingImports]
+from fastapi import FastAPI, HTTPException, Query # pyright: ignore[reportMissingImports]
+from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
 from pydantic import BaseModel
-from dotenv import load_dotenv
+from dotenv import load_dotenv # pyright: ignore[reportMissingImports]
 
 load_dotenv()
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
