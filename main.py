@@ -129,8 +129,7 @@ async def tmdb_movie_details(movie_id: int) -> TMDBMovieDetails:
 
 
 async def tmdb_search_movies(query: str, page: int = 1) -> Dict[str, Any]:
-    return await tmdb_get(
-        "/search/movie",
+    return await tmdb_get("/search/movie",
         {
             "query": query,
             "include_adult": "false",
@@ -184,9 +183,7 @@ def get_local_idx_by_title(title: str) -> int:
     )
 
 
-def tfidf_recommend_titles(
-    query_title: str, top_n: int = 10
-) -> List[Tuple[str, float]]:
+def tfidf_recommend_titles(query_title: str, top_n: int = 10) -> List[Tuple[str, float]]:
     """
     Returns list of (title, score) from local df using cosine similarity on TF-IDF matrix.
     Safe against missing columns/rows.
