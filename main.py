@@ -13,6 +13,15 @@ from dotenv import load_dotenv # pyright: ignore[reportMissingImports]
 load_dotenv()
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
+# TEMP DEBUG - remove after fix
+import sys
+print("ALL ENV VARS:", list(os.environ.keys()), flush=True)
+print("TMDB KEY VALUE:", repr(TMDB_API_KEY), flush=True)
+sys.stdout.flush()
+
+if not TMDB_API_KEY:
+    raise RuntimeError("TMDB_API_KEY missing. Put it in .env as TMDB_API_KEY=xxxx")
+
 TMDB_BASE = "https://api.themoviedb.org/3"
 TMDB_IMG_500 = "https://image.tmdb.org/t/p/w500"
 
